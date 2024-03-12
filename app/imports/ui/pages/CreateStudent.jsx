@@ -19,11 +19,13 @@ const CreateStudent = () => {
   const submit = (data, formRef) => {
     let insertError;
     const {
-      name, email, bio, level, gpa, enrolled, hobbies, major,
+      // eslint-disable-next-line no-unused-vars
+      name, email, bio, level, gpa, enrolled, hobbies, major, instuctor,
     } = data;
     StudentData.insert(
       {
-        name, email, bio, level, gpa: gpa2Number(gpa), hobbies, major,
+        // eslint-disable-next-line no-undef
+        name, email, bio, level, gpa: gpa2Number(gpa), hobbies, major, instructor,
       },
       (error) => { insertError = error; },
     );
@@ -56,6 +58,7 @@ const CreateStudent = () => {
               <Row>
                 <Col><TextField name="name" showInlineError placeholder="Your name" /></Col>
                 <Col><TextField name="email" showInlineError placeholder="Your email" /></Col>
+                <Col><SelectField name="intructor" showInlineError placeholder="Choose one" /></Col>
               </Row>
               <LongTextField name="bio" showInlineError placeholder="A bit about you" />
               <Row>
